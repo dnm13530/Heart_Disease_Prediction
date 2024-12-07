@@ -1,27 +1,27 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const WelcomePage = () => {
-  const navigate = useNavigate();
-
+function WelcomePage() {
   return (
     <div className="container text-center mt-5">
-      <h1>Heart Disease Prediction System</h1>
-      <p>
-        This application predicts the likelihood of cardiac arrest based on user inputs 
-        and provides insights using machine learning models.
-      </p>
-      <p>Models used: Stacked Model, Logistic Regression, Decision Trees</p>
-      <div className="mt-4">
-        <button className="btn btn-primary mx-2" onClick={() => navigate('/predict')}>
-          Predict Individual Health
+      <h1 className="mb-4">Welcome to Heart Disease Prediction</h1>
+      <p>Select an option below to proceed:</p>
+      <div className="d-flex justify-content-center mt-4">
+        <button
+          className="btn btn-primary me-3"
+          onClick={() => (window.location.href = "/individual")}
+        >
+          Individual Prediction
         </button>
-        <button className="btn btn-secondary mx-2" onClick={() => navigate('/bulk-test')}>
-          Analyze Bulk Data
+        <button
+          className="btn btn-secondary"
+          onClick={() => (window.location.href = "/bulk")}
+        >
+          Bulk Prediction
         </button>
       </div>
     </div>
   );
-};
+}
 
 export default WelcomePage;
